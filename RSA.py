@@ -1,3 +1,4 @@
+print("Enter Two large prime numbers(p and q)")
 p = int(input("enter p:"))
 q = int(input("enter q:"))
 n = p * q
