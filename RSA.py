@@ -38,17 +38,17 @@ while True:
     elif choice == "2":
         encrypted_text = input("Enter encrypted text: ")
         plain_text = ""
-        for s in encrypted_text.split(" "):
+        for char in encrypted_text.split(" "):
             for k in cipher:
-                m = 0
+                index = 0
                 for l in cipher:
                     if k == l:
-                        if s == (str((m**public_key) % n)):
+                        if char == (str((index**public_key) % n)):
                             plain_text = plain_text + l
                         break
                     m += 1
         print("plain text: ", plain_text)
-        input("press enter")
+        input("Press Enter to continue...")
     elif choice == "3":
         break
     else:
