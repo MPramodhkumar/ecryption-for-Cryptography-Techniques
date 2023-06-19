@@ -46,7 +46,7 @@ while True:
                         if char == (str((index**public_key) % n)):
                             plain_text = plain_text + l
                         break
-                    m += 1
+                    index += 1
         print("plain text: ", plain_text)
         input("Press Enter to continue...")
     elif choice == "3":
