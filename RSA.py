@@ -14,8 +14,6 @@ for j in range(0, 10000):
         break
 while True:
     print("\n")
-    print("p=", p)
-    print("q=", q)
     print("n=", n)
     print("Totient", z)
     print("public key=", public_key)
