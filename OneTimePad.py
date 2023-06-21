@@ -38,12 +38,6 @@ def xor_binary_strings(a, b):
     return "".join(str(int(x) ^ int(y)) for x, y in zip(a, b))
 
 
-def pad_key(plaintext, key):
-    while len(key) < len(plaintext):
-        key += key
-    return key[: len(plaintext)]
-
-
 alp = list("abcdefghijklmnopqrstuvwxyz")
 while True:
     print("Choose Mode:")
@@ -63,10 +57,16 @@ while True:
             if choice == "1":
                 plaintext = input("Enter text:")
                 key = input("Enter key:")
+                if len(plaintext) != len(key):
+                    print("plaintext and key should be equal.Enter again")
+                    break
                 print("Encrypted_text:", otp_encrypt(plaintext, key))
             elif choice == "2":
                 ciphertext = input("Enter text:")
                 key = input("Enter key:")
+                if len(plaintext) != len(key):
+                    print("plaintext and key should be equal.Enter again")
+                    break
                 print("Decrypted_text:", otp_decrypt(ciphertext, key))
             elif choice == "3":
                 break
@@ -85,15 +85,19 @@ while True:
             if choice == "1":
                 plaintext = input("Enter plaintext in binary: ")
                 key = input("Enter key in binary: ")
-
-                padded_key = pad_key(plaintext, key)
-                ciphertext = xor_binary_strings(plaintext, padded_key)
+                if len(plaintext) != len(key):
+                    print("plaintext and key should be equal.Enter again")
+                    break
+                ciphertext = xor_binary_strings(plaintext, key)
 
                 print("Ciphertext:", ciphertext)
             elif choice == "2":
                 ciphertext = input("Enter ciphertext in binary: ")
                 key = input("Enter key in binary: ")
-                decrypted_text = xor_binary_strings(ciphertext, padded_key)
+                if len(ciphertext) != len(key):
+                    print("plaintext and key should be equal.Enter again")
+                    break
+                decrypted_text = xor_binary_strings(ciphertext, key)
 
                 print("Decrypted text:", decrypted_text)
             elif choice == "3":
