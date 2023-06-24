@@ -34,7 +34,7 @@ def otp_decrypt(ciphertext, key):
     return plaintext
 
 
-def xor_binary_strings(a, b):
+def xor_operation(a, b):
     return "".join(str(int(x) ^ int(y)) for x, y in zip(a, b))
 
 
@@ -88,7 +88,7 @@ while True:
                 if len(plaintext) != len(key):
                     print("plaintext and key should be equal.Enter again")
                     break
-                ciphertext = xor_binary_strings(plaintext, key)
+                ciphertext = xor_operation(plaintext, key)
 
                 print("Ciphertext:", ciphertext)
             elif choice == "2":
@@ -97,7 +97,7 @@ while True:
                 if len(ciphertext) != len(key):
                     print("plaintext and key should be equal.Enter again")
                     break
-                decrypted_text = xor_binary_strings(ciphertext, key)
+                decrypted_text = xor_operation(ciphertext, key)
 
                 print("Decrypted text:", decrypted_text)
             elif choice == "3":
