@@ -55,7 +55,8 @@ def hill_cipher_decrypt(ciphertext, key_message):
         det_inv = mod_inv(det, 26)
     except ValueError:
         print(
-            "Invalid key for decryption. Choose another key or modify the existing one."
+            # "Invalid key for decryption. Choose another key or modify the existing one."
+            "determinant not possible"
         )
         return
 
@@ -97,9 +98,12 @@ while True:
     elif mode == "2":
         ciphertext = input("Enter Ciphertext:")
         key_message = input("Enter key in message format(4 Letters):")
-        decrypted_text = hill_cipher_decrypt(ciphertext, key_message)
-        print()
-        print("Decrypted text:", decrypted_text)
+        if len(key_message) == 4:
+            decrypted_text = hill_cipher_decrypt(ciphertext, key_message)
+            print()
+            print("Decrypted text:", decrypted_text)
+        else:
+            print("Invalid key")
     elif mode == "3":
         break
     else:
