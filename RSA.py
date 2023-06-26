@@ -3,7 +3,7 @@ p = int(input("enter p:"))
 q = int(input("enter q:"))
 n = p * q
 z = (p - 1) * (q - 1)
-cipher = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+cipher = "abcdefghijklmnopqrstuvwxyz"
 for i in range(1, 10000):
     if 0 != z % i:
         public_key = round(i)
@@ -44,7 +44,7 @@ while True:
                 for l in cipher:
                     if k == l:
                         if char == (str((index**public_key) % n)):
-                            plain_text = plain_text + l
+                            plain_text = (plain_text + l) + " "
                         break
                     index += 1
         print("plain text: ", plain_text)
