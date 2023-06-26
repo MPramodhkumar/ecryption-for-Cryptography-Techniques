@@ -15,7 +15,7 @@ for j in range(0, 10000):
 while True:
     print("\n")
     print("n=", n)
-    print("Totient", z)
+    print("Totient=", z)
     print("public key=", public_key)
     print("private key=", private_key)
     print()
