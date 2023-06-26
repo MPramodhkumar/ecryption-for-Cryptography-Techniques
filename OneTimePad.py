@@ -64,7 +64,7 @@ while True:
             elif choice == "2":
                 ciphertext = input("Enter text:")
                 key = input("Enter key:")
-                if len(plaintext) != len(key):
+                if len(ciphertext) != len(key):
                     print("plaintext and key should be equal.Enter again")
                     break
                 print("Decrypted_text:", otp_decrypt(ciphertext, key))
