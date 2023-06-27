@@ -65,7 +65,8 @@ def playfair_decrypt(ciphertext, matrix):
         else:
             plaintext += matrix[row1][col2] + matrix[row2][col1]
     plaintext = plaintext.rstrip("x")
-    plaintext = plaintext.replace("i/j", "i")
+    plaintext = plaintext.replace("i", "i/j")
+    plaintext = plaintext.replace("j", "i/j")
     return plaintext
 
 
