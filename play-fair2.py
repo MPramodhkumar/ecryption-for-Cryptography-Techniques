@@ -38,6 +38,8 @@ def process_text(text, replace_char="x"):
 
 def playfair_encrypt(plaintext, matrix):
     plaintext = process_text(plaintext)
+    if len(plaintext) % 2 != 0:
+        plaintext += "x"  # Add a dummy character to make the length even
     ciphertext = ""
     for i in range(0, len(plaintext), 2):
         row1, col1 = find_position(matrix, plaintext[i])
