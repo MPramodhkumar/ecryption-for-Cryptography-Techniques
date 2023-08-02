@@ -6,10 +6,8 @@ def otp_encrypt(plaintext, key):
         char = plaintext[i]
         if char.isalpha():
             p = alp.index(char)
-            # k = ord(key[i % len(key)]) - ord("A")
             k = alp.index(key[i % len(key)])
             c = (p + k) % 26
-            # ciphertext += chr(c + ord("A"))
             ciphertext += alp[c]
         else:
             ciphertext += char
@@ -24,7 +22,6 @@ def otp_decrypt(ciphertext, key):
     for i in range(len(ciphertext)):
         char = ciphertext[i]
         if char.isalpha():
-            # c = ord(char) - ord("A")
             c = alp.index(char)
             k = alp.index(key[i % len(key)])
             p = (c - k) % 26
